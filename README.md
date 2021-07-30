@@ -3,3 +3,7 @@ This is a rebar3 projects based on the Ben Forta book "Teach Yourself Regular Ex
 
 - [Ben Fotra (book author's blog page)](https://forta.com/about/)
 - [Book's info page](https://forta.com/books/0672325667/)
+
+Regex tools:
+- [RegEx Testing](https://www.regextester.com/)
+- [regular expressions 101](https://www.regextester.com/)
