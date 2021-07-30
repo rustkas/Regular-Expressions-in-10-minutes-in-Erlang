@@ -19,4 +19,5 @@ introdusing_regex
 	$ rebar3 eunit -m text_sequence_search_tests
 	$ rebar3 eunit -m word_replace_tests
 	$ rebar3 eunit -m replace_url_tests
+	$ rebar3 eunit -m regex_examples_tests
 	

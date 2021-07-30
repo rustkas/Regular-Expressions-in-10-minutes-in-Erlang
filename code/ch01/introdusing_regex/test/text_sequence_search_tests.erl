@@ -29,12 +29,7 @@ reasearch_test() ->
 
 %  searching for a word containing the text car (regardless of case)
 car_test_() ->
-    {foreach, local, fun get_text/0, 
-	[
-	fun car_01/1,
-	fun car_02/1,
-	fun car_03/1
-	]}.
+    {foreach, local, fun get_text/0, [fun car_01/1, fun car_02/1, fun car_03/1]}.
 
 car_01(Text) ->
     Expected = [["car"], ["scar"], ["carry"], ["incarceratte"]],
@@ -50,7 +45,7 @@ car_02(Text) ->
     Expected = [["car"], ["scar"], ["carry"], ["incarceratte"]],
     Regex = "\\b[^\\s]*car[^\\s]*\\b",
     TunedRegex = re_tuner:replace(Regex),
-    {ok, MP} = re:compile(TunedRegex,[caseless]),
+    {ok, MP} = re:compile(TunedRegex, [caseless]),
 
     {match, Captured} = re:run(Text, MP, [global, {capture, all, list}]),
     Result = Captured,
@@ -65,5 +60,6 @@ car_03(Text) ->
     {match, Captured} = re:run(Text, MP, [global, {capture, all, list}]),
     Result = Captured,
     ?_assertEqual(Expected, Result).
+
 -endif.
 -endif.
