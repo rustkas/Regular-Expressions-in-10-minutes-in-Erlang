@@ -10,6 +10,7 @@ introdusing_regex
 	
 ## Get dependencies
 	$ rebar3 deps	
+
 ## Format
 	$ rebar3 format
 	

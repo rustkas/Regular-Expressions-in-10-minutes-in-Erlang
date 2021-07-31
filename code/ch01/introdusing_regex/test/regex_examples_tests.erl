@@ -18,7 +18,8 @@ getRegexList() ->
          "[a-zA-Z0-9_.]",
          "<[Hh]1>.*</[Hh]1>",
          "\\r\\n\\r\\n",
-         "\\d{3,3}-\\d{3,3}-\\d{4,4}"].
+         "\\d{3,3}-\\d{3,3}-\\d{4,4}"],
+    RegexList.
 
 -ifdef(RESEARCH).
 
