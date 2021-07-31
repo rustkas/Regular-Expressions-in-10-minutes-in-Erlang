@@ -6,7 +6,7 @@ matching_literal_text
 ----	
 	
 	# all commands in one string
-	$ rebar3 new lib matching_literal_text && cd ..
+	$ rebar3 new lib matching_literal_text
 	
 ## Get dependencies
 	$ rebar3 deps	

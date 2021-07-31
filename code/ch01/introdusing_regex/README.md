@@ -6,7 +6,7 @@ introdusing_regex
 ----	
 	
 	# all commands in one string
-	$ rebar3 new lib introdusing_regex && cd ..
+	$ rebar3 new lib introdusing_regex
 	
 ## Get dependencies
 	$ rebar3 deps	
