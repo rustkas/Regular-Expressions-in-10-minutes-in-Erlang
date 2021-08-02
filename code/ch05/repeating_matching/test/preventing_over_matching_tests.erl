@@ -1,7 +1,7 @@
 % For research For research mode, activate the RESEARCH constant.
 -module(preventing_over_matching_tests).
 
--define(RESEARCH, true).
+%-define(RESEARCH, true).
 
 %%
 %% Tests
@@ -26,8 +26,8 @@ get_file_ru_content() ->
 reasearch_test() ->
 	
     Text = get_file_content(),
-    Regex = "<[Bb]>.*</[Bb]>",
-	{ok,MP}= re:compile(Regex,[ungreedy]),
+    Regex = "(?U)<[Bb]>.*</[Bb]>",
+	{ok,MP}= re:compile(Regex,[]),
 	{match, Captured} = re:run(Text, MP, [global,{capture, all, list}]),
     
 	?debugFmt("Result = ~p~n", [Captured]).
@@ -59,14 +59,50 @@ lazy_01_test() ->
     Result = Captured,
 	?_assertEqual(Expected, Result).
 	
+lazy_01_ru_test() ->
+    Expected = [["<b>AK</b>"],["<b>HI</b>"]],
+    Text = get_file_ru_content(),
+    Regex = "<[Bb]>.*?</[Bb]>",
+    {ok,MP}= re:compile(Regex,[unicode]),
+	{match, [Captured]} = re:run(Text, MP, [{capture, all, list}]),
+    Result = Captured,
+	?_assertEqual(Expected, Result).
+	
 lazy_02_test() ->
     Expected = [["<b>AK</b>"],["<b>HI</b>"]],
     Text = get_file_content(),				 
-    Regex = "<[Bb]>.*?</[Bb]>",
+    Regex = "<[Bb]>.*</[Bb]>",
     {ok,MP}= re:compile(Regex,[ungreedy]),
 	{match, Captured} = re:run(Text, MP, [global,{capture, all, list}]),
     Result = Captured,
-	?_assertEqual(Expected, Result).	
+	?_assertEqual(Expected, Result).
+
+lazy_02_ru_test() ->
+    Expected = [["<b>AK</b>"],["<b>HI</b>"]],
+    Text = get_file_ru_content(),
+    Regex = "<[Bb]>.*</[Bb]>",
+    {ok,MP}= re:compile(Regex,[ungreedy,unicode]),
+	{match, [Captured]} = re:run(Text, MP, [{capture, all, list}]),
+    Result = Captured,
+	?_assertEqual(Expected, Result).
+	
+
+lazy_03_test() ->
+    Expected = [["<b>AK</b>"],["<b>HI</b>"]],
+    Text = get_file_content(),				 
+    Regex = "(?U)<[Bb]>.*</[Bb]>",
+    {match, Captured} = re:run(Text, get_mp(Regex), [global,{capture, all, list}]),
+    Result = Captured,
+	?_assertEqual(Expected, Result).
+
+lazy_03_ru_test() ->
+    Expected = [["<b>AK</b>"],["<b>HI</b>"]],
+    Text = get_file_ru_content(),
+    Regex = "(?U)<[Bb]>.*</[Bb]>",
+    {ok,MP}= re:compile(Regex,[unicode]),
+	{match, [Captured]} = re:run(Text, MP, [{capture, all, list}]),
+    Result = Captured,
+	?_assertEqual(Expected, Result).
 
 -endif.
 -endif.
