@@ -58,11 +58,6 @@ ru() ->
 
 reasearch_test() ->
     FileNameList = get_file_names(),
-    %Regex = "[ns]a.\.xls",
-    %{ok, MP} = re:compile(Regex),
-    %CapturedList = getCapturedList(MP,FileNameList),
-    %?debugFmt("Captured = ~p~n", [CapturedList]),
-    %?debugFmt("Length = ~p~n", [length(CapturedList)]).
     ?debugFmt("FileNameList = ~p~n", [FileNameList]).
 
 -else.

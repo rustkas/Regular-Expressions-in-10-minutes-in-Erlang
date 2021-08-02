@@ -45,12 +45,15 @@ getCapturedList(MP, List) ->
             lists:sort(ResultList)
     end.
 
+get_mp(Regex) ->
+    re_tuner:mp(Regex).
+
 -ifdef(RESEARCH).
 
 reasearch_test() ->
     FileNameList = get_file_with_sam_names(),
     Regex = "[ns]a[^0-9]\.xls",
-    MP = re_tuner:mp(Regex),
+    MP = get_mp(Regex),
     CapturedList = getCapturedList(MP, FileNameList),
 
     ?debugFmt("Captured = ~p~n", [CapturedList]),
@@ -66,14 +69,13 @@ explore_filenames_test_() ->
      fun get_file_with_sam_names/0,
      [fun research_01/1]}.
 
-get_mp(Regex) ->
-    re_tuner:mp(Regex).
+
 
 research_01(FileNameList) ->
     Expected = ["sam.xls"],
 
     Regex = "[ns]a[^0-9]\.xls",
-    MP = re_tuner:mp(Regex),
+    MP = get_mp(Regex),
     CapturedList = getCapturedList(MP, FileNameList),
     Result = CapturedList,
     ?_assertEqual(Expected, Result).
