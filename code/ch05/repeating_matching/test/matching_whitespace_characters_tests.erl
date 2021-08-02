@@ -1,7 +1,7 @@
 % For research For research mode, activate the RESEARCH constant.
 -module(matching_whitespace_characters_tests).
 
-%-define(RESEARCH, true).
+-define(RESEARCH, true).
 
 %%
 %% Tests
@@ -22,14 +22,10 @@ get_csv_content() ->
 reasearch_test() ->
     Text = get_csv_content(),
     ?debugFmt("Text = ~p~n", [Text]),
-    Regex = "^\\s+|\\s+$",
-    TunedRegex = re_tuner:replace(Regex),
-    ?debugFmt("TunedRegex = ~p~n", [TunedRegex]),
-    %Result = re:run(Text, get_mp(Regex), [ {capture, all, list}]),
+    Regex = "[\\r]?\\n[\\r]?\\n",
+
     Result =
-        re:replace(Text, TunedRegex, "", [extended, multiline, global, {return, list}]),
-    ?debugFmt("Text = ~p~n", [Text]),
-    ?debugFmt("Result = ~p~n", [Result]),
+        re:replace(Text, Regex, "", [extended, multiline, global, {return, list}]),
 
     {ok, Dir} = file:get_cwd(),
     FullFileName = Dir ++ [$/] ++ "data" ++ [$/] ++ "new data.csv",
