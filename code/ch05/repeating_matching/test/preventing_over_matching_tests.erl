@@ -85,7 +85,6 @@ lazy_02_ru_test() ->
 	{match, [Captured]} = re:run(Text, MP, [{capture, all, list}]),
     Result = Captured,
 	?_assertEqual(Expected, Result).
-	
 
 lazy_03_test() ->
     Expected = [["<b>AK</b>"],["<b>HI</b>"]],
