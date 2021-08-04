@@ -20,3 +20,4 @@ position_matching
 	$ rebar3 eunit -m position_matching_tests
 	$ rebar3 eunit -m using_word_boundaries_tests
 	$ rebar3 eunit -m string_boundaries_tests
+	$ rebar3 eunit -m using_multiline_mode_tests
