@@ -1,0 +1,1 @@
+Привет, меня зовут Бен&nbsp;Форта. я - автор книг по SQL (включая MySQL, Oracle&nbsp;PL/SQL, and SQL Server T-SQL), регулярным&nbsp;&nbsp;выражениям и другим темам.

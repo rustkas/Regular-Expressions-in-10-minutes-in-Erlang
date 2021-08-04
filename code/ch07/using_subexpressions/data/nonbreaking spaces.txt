@@ -1,0 +1,1 @@
+Hello, my name is Ben&nbsp;Forta, and I am the author of multiple books on SQL (including MySQL, Oracle&nbsp;PL/SQL, and SQL&nbsp;Server T-SQL), Regular&nbsp;&nbsp;Expressions, and other subjects.
