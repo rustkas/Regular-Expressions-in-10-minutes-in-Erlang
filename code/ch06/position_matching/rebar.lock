@@ -1,0 +1,8 @@
+{"1.2.0",
+[{<<"re_tuner">>,{pkg,<<"re_tuner">>,<<"0.1.5">>},0}]}.
+[
+{pkg_hash,[
+ {<<"re_tuner">>, <<"D2D01FA6F7F21568FFAE20047149DA0BFD02D61AD3F3A9457AA4FB39D280EAB6">>}]},
+{pkg_hash_ext,[
+ {<<"re_tuner">>, <<"C5AD46E8043FB413B61F940B31893D9EF579A932A6CF84EB9F36EFAA08BDB3FF">>}]}
+].

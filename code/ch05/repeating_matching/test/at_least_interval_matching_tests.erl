@@ -20,12 +20,11 @@ get_file_content() ->
 -ifdef(RESEARCH).
 
 reasearch_test() ->
-	
     Text = get_file_content(),
     Regex = "\\d+: \\$\\d{3,}\\.\\d{2}",
-    RunString = re:run(Text, get_mp(Regex), [global,{capture, all, list}]),
-	?debugFmt("Result = ~p~n", [RunString]).
-	
+    RunString = re:run(Text, get_mp(Regex), [global, {capture, all, list}]),
+    ?debugFmt("Result = ~p~n", [RunString]).
+
 -else.
 
 reasearch_test_() ->
@@ -35,27 +34,28 @@ reasearch_test_() ->
      [fun research_01/1, fun research_02/1]}.
 
 research_01(Text) ->
-    Expected = [["1001: $496.80"],
-                 ["1002: $1290.69"],
-                 ["1004: $613.42"],
-                 ["1004: $613.42"],
-                 ["1006: $414.90"]],
+    Expected =
+        [["1001: $496.80"],
+         ["1002: $1290.69"],
+         ["1004: $613.42"],
+         ["1004: $613.42"],
+         ["1006: $414.90"]],
     Regex = "\\d+: \\$\\d{3,}\\.\\d{2}",
-    {match, Captured} = re:run(Text, get_mp(Regex), [global,{capture, all, list}]),
+    {match, Captured} = re:run(Text, get_mp(Regex), [global, {capture, all, list}]),
     Result = Captured,
-	?_assertEqual(Expected, Result).
+    ?_assertEqual(Expected, Result).
 
 research_02(Text) ->
-    Expected = [["1001: $496.80"],
-                 ["1002: $1290.69"],
-                 ["1004: $613.42"],
-                 ["1004: $613.42"],
-                 ["1006: $414.90"]],
+    Expected =
+        [["1001: $496.80"],
+         ["1002: $1290.69"],
+         ["1004: $613.42"],
+         ["1004: $613.42"],
+         ["1006: $414.90"]],
     Regex = "\\d{1,}: \\$\\d{3,}\\.\\d{2}",
-    {match, Captured} = re:run(Text, get_mp(Regex), [global,{capture, all, list}]),
+    {match, Captured} = re:run(Text, get_mp(Regex), [global, {capture, all, list}]),
     Result = Captured,
-	?_assertEqual(Expected, Result).
+    ?_assertEqual(Expected, Result).
 
 -endif.
 -endif.
-
