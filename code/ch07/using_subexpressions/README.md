@@ -18,3 +18,4 @@ using_subexpressions
 -----
 	$ rebar3 eunit
 	$ rebar3 eunit -m using_subexpressions_tests
+	$ rebar3 eunit -m nesting_subexpressions_tests
