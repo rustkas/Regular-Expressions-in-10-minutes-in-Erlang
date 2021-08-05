@@ -1,0 +1,9 @@
+<body>
+<h1>Welcome to my Homepage</h1>
+Content is divided into two sections:<br/>
+<h2>ColdFusion</h2>
+Information about Macromedia ColdFusion.
+<h2>Wireless</h2>
+Information about Bluetooth 802.11, and more.
+<h2>This is not valid HTML</h3>
+</body>
