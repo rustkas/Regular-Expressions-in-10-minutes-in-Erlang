@@ -1,0 +1,6 @@
+http://www.forta.com/blog
+https://www.forta.com:80/blog/index.cfm
+http://www.forta.com
+http://ben:password@www.forta.com/
+http://localhost/index.php?ab=1&c=2
+http://localhost:8500/

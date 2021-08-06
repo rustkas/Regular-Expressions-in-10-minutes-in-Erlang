@@ -1,0 +1,11 @@
+<script language="JavaScript">
+// Turn off fields used only by replace
+function hideReplaceFields() {
+document.getElementById('RegExReplace').disabled=true;
+document.getElementById('replaceheader').disabled=true;
+}
+// Turn on fields used only by replace
+function showReplaceFields() {
+document.getElementById('RegExReplace').disabled=false;
+document.getElementById('replaceheader').disabled=false;
+}
