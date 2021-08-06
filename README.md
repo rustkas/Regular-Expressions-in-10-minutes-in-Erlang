@@ -6,6 +6,8 @@ This is a rebar3 projects based on the Ben Forta book "Teach Yourself Regular Ex
 
 - [Ben Fotra (book author's blog page)](https://forta.com/about/)
 - [Book's info page](https://forta.com/books/0672325667/)
+- ["Teach Yourself Regular Expressions in 10 Minutes "](https://forta.com/books/0672325667/) additional information
+- ["Learning Regular Expressions"](https://forta.com/books/0134757068/)  additional information
 
 ## Regex tools:
 - [RegEx Testing](https://www.regextester.com/)
